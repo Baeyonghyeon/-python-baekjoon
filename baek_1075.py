@@ -11,7 +11,6 @@ def main():
         print("00")
     else:
         token = F-token
-
         if token < 10:
             print("0"+str(token))
         else:
