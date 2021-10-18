@@ -1,11 +1,14 @@
-def main():
-    x = int(input("정수 1 :"))
-    y = int(input("정수 2 :"))
-    print("큰 수 : ",max(x,y))
-    print("작은 수 :",min(x,y))
-    print("차의 절댓값 : ", abs(x-y))
+import sys
 
+S = sys.stdin.read()
+cnt = [0] * 26
+for s in S:
+    if s.islower():
+        cnt[ord(s) - ord('a')] += 1
 
-
-if __name__ == '__main__':
-    main()
+max_value = max(cnt)
+result = ''
+for i in range(len(cnt)):
+    if cnt[i] == max_value:
+        result += chr(i + ord('a'))
+print(result)
